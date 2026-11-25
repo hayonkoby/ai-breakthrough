@@ -90,13 +90,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
   background-image:linear-gradient(var(--line-faint) 1px,transparent 1px),linear-gradient(90deg,var(--line-faint) 1px,transparent 1px);
   background-size:88px 88px;mask-image:linear-gradient(180deg,#000 0%,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
-.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(40px,6vw,88px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(40px,6vw,88px);align-items:center}
 .hero-kicker{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:.9rem;color:var(--soft)}
 .hero-kicker .eyebrow{color:var(--gold)}
 .live{display:inline-flex;align-items:center;gap:8px}
 .live i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(198,162,91,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(198,162,91,0)}100%{box-shadow:0 0 0 0 rgba(198,162,91,0)}}
-.h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,5.4vw,4.7rem);line-height:1.04;letter-spacing:-.015em;margin-top:26px}
+.h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.5rem,4.6vw,4.2rem);line-height:1.05;letter-spacing:-.015em;margin-top:26px}
 .nw{white-space:nowrap}
 .h1 .l2{display:block;color:var(--gold)}
 .hero-sub{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--soft);max-width:54ch;margin-top:28px}
@@ -319,6 +319,54 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 .final .cd span+span{padding-inline-start:28px;border-inline-start:1px solid var(--line-dark)}
 
 .calrow{margin-top:26px}
+/* hero video */
+.vid{position:relative;margin:0}
+.vid::after{content:"";position:absolute;inset-block:14px -14px;inset-inline:14px -14px;border:1px solid var(--line-dark);border-radius:6px;z-index:-1}
+.vid-frame{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line-dark);border-radius:6px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.65)}
+.vid video{display:block;width:100%;height:100%;object-fit:cover}
+.vid-play{position:absolute;inset:0;border:0;padding:0;background:linear-gradient(0deg,rgba(7,22,48,.88) 0%,rgba(7,22,48,.1) 55%,rgba(7,22,48,0) 100%);color:#fff;cursor:pointer}
+.pbtn{position:absolute;top:50%;left:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:var(--gold);color:var(--navy-deep);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(198,162,91,.55);animation:pulse 2.4s infinite;transition:transform .25s var(--ease)}
+.pbtn svg{margin-left:4px}
+.vid-play:hover .pbtn{transform:scale(1.08)}
+.vid-cap{position:absolute;inset-inline:22px;bottom:18px;display:grid;gap:2px;text-align:start}
+.vid-cap b{font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.45rem);line-height:1.25}
+.vid-cap small{color:var(--gold-soft);font-size:.85rem}
+.vid.playing .vid-play{display:none}
+.vid-end{position:absolute;inset:0;background:rgba(7,22,48,.92);display:grid;place-content:center;justify-items:center;gap:16px;text-align:center;padding:20px}
+.vid-end[hidden]{display:none}
+.vid-end p{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:700;color:#fff}
+.vid-again{background:none;border:0;color:var(--soft);text-decoration:underline;text-underline-offset:4px;font-size:.92rem}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.9rem;color:var(--soft)}
+.trust li{display:inline-flex;gap:8px;align-items:center}
+.trust li::before{content:"✓";color:var(--gold);font-family:var(--mono)}
+/* level-3 demo */
+.lvl-demo{display:grid;grid-template-columns:5fr 7fr;gap:clamp(36px,6vw,88px);align-items:center;margin-top:clamp(64px,8vw,104px)}
+.lvl-demo-h{font-family:var(--serif);font-weight:900;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15;margin-top:14px}
+.cta-line{margin-top:28px}
+/* mid-page CTA */
+.mid-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;margin-top:40px;padding:24px 28px;border:1px solid var(--line);border-radius:6px;background:var(--warm)}
+.mid-cta p{font-family:var(--serif);font-weight:700;font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.35}
+.result .btn{margin-top:26px;width:100%}
+.inst .cta-line{margin-top:30px}
+/* contact form */
+.contact-mail{margin-top:26px;color:var(--muted)}
+.contact-mail a{color:var(--gold-text);font-weight:700}
+.cform{display:grid;gap:22px;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:clamp(24px,4vw,44px)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-weight:700;font-size:.95rem}
+.field .opt{font-weight:400;color:var(--muted);font-size:.85rem}
+.field input,.field select,.field textarea{font:inherit;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;min-height:50px;width:100%;transition:border-color .2s,box-shadow .2s}
+.field input[dir=ltr]{text-align:right}
+.field textarea{resize:vertical;min-height:120px;line-height:1.6}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,33,64,.12)}
+.field.err input,.field.err textarea{border-color:#A3352B}
+.cform .btn{justify-self:start}
+.cform .btn[disabled]{opacity:.6;cursor:wait}
+.cstatus{font-weight:700;min-height:1.6em}
+.cstatus.ok{color:#1F6B45}.cstatus.bad{color:#A3352B}
+.hp{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;opacity:0}
+@media (max-width:620px){.frow{grid-template-columns:1fr}.cform .btn{width:100%}}
 .cal{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:1px solid var(--line-dark);padding-bottom:3px;transition:border-color .2s}
 .cal:hover{border-color:var(--gold)}
 /* footer */
@@ -350,6 +398,9 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 }
 @media (max-width:900px){
   :root{--wrap:calc(100% - 44px)}
+  .lvl-demo{grid-template-columns:1fr}
+  .vid::after{display:none}
+  .hero-grid{gap:44px}
   .nav{display:none}
   .hero-grid,.split,.maps,.calc,.inst,.final-grid{grid-template-columns:1fr}
   .sticky{position:static}
@@ -380,6 +431,13 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   .term-body{min-height:356px;padding:18px 16px}
   .term-tabs button{font-size:.76rem;padding:10px 4px}
   .term::after,.result::after{display:none}
+  .pbtn{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .btn{white-space:normal;text-align:center}
+  .calc>*,.split>*,.inst>*,.final-grid>*,.lvl-demo>*,.hero-grid>*{min-width:0}
+  .vid-cap{inset-inline:14px;bottom:12px}
+  .mid-cta{padding:20px}
+  .mid-cta .btn{width:100%}
+  .lvl-demo .btn{width:100%}
   .facts{grid-template-columns:1fr 1fr}
   .fact,.fact:nth-child(n){border-inline-start:0;padding-inline-start:0;border-top:1px solid var(--line-faint);padding-block:18px 20px}
   .fact:nth-child(even){padding-inline-start:16px;border-inline-start:1px solid var(--line-faint)}
@@ -418,6 +476,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
       <a href="#program">התוכנית</a>
       <a href="#koby">המנחה</a>
       <a href="#faq">שאלות</a>
+      <a href="#contact">צור קשר</a>
     </nav>
     <a class="btn btn-sm" href="#register">להרשמה</a>
   </div>
@@ -434,35 +493,34 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
           <span class="live"><i aria-hidden="true"></i>בשידור חי בזום</span>
         </div>
         <h1 class="h1 rv d1" id="h1">תפסיקו לשאול <span class="nw">את ה&#8209;AI</span> שאלות,<span class="l2">תתחילו לתת לו עבודה</span></h1>
-        <p class="hero-sub rv d2">שלוש שעות בזום עם קובי חיון, לומדים לעבוד נכון עם <strong><bdi>ChatGPT</bdi></strong> ו&#8209;<strong><bdi>Claude Code</bdi></strong>, ומתחילים לבנות לעסק סוכנים, משימות מתוזמנות וכלים שעושים את העבודה החוזרת במקומכם, ומחכים לאישור שלכם.</p>
+        <p class="hero-sub rv d2">שלוש שעות בזום עם קובי חיון: לומדים לעבוד נכון עם <strong><bdi>ChatGPT</bdi></strong> ו&#8209;<strong><bdi>Claude Code</bdi></strong>, ובונים לעסק סוכנים ומשימות מתוזמנות שעושים את העבודה החוזרת במקומכם.</p>
         <div class="hero-cta rv d3">
           <a class="btn btn-gold" href="https://secure.cardcom.solutions/EA/EA5/KqCFPCM6CkO3hgHgZ7S7mg/PaymentSP">שריינו מקום בסדנה <span class="arr" aria-hidden="true">←</span></a>
           <div class="price-tag"><b><bdi>450 ₪</bdi></b><span>כולל מע״מ והקלטה מלאה</span></div>
         </div>
+        <ul class="trust rv d3" aria-label="מה חשוב לדעת">
+          <li>בלי ידע בתכנות</li>
+          <li>הקלטה מלאה כלולה</li>
+          <li>תשלום מאובטח</li>
+        </ul>
       </div>
 
-      <!-- live agent demo -->
-      <div class="term rv d2" role="region" aria-label="הדגמה: כך נראית משימה שה-AI מבצע עבורכם">
-        <div class="term-top">
-          <span class="ltr">claude · scheduled task</span>
+      <!-- hero video -->
+      <figure class="vid rv d2" id="vid">
+        <div class="vid-frame">
+          <video id="heroVid" preload="none" playsinline poster="poster.jpg" width="1280" height="720" aria-label="סרטון: מה Claude Code יכול לבנות לעסק שלכם"><source src="video.mp4" type="video/mp4"></video>
+          <button class="vid-play" id="vidPlay" type="button" aria-label="הפעלת הסרטון: מה Claude Code יכול לבנות לעסק שלכם">
+            <span class="pbtn" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+            <span class="vid-cap"><b>מה <bdi>Claude Code</bdi> בונה לעסק שלכם</b><small>צפו לפני שנרשמים · <bdi>1:24</bdi></small></span>
+          </button>
+          <div class="vid-end" id="vidEnd" hidden>
+            <p>רוצים לבנות כזה לעסק שלכם?</p>
+            <a class="btn btn-gold" href="https://secure.cardcom.solutions/EA/EA5/KqCFPCM6CkO3hgHgZ7S7mg/PaymentSP">שריינו מקום בסדנה <span class="arr" aria-hidden="true">←</span></a>
+            <button type="button" class="vid-again" id="vidAgain">לצפות שוב</button>
+          </div>
         </div>
-        <div class="term-tabs" role="tablist" aria-label="דוגמאות למשימות">
-          <button role="tab" aria-selected="true" data-i="0">סקירת מתחרים</button>
-          <button role="tab" aria-selected="false" data-i="1">ליד חדש</button>
-          <button role="tab" aria-selected="false" data-i="2">דוח מכירות</button>
-        </div>
-        <div class="term-body" aria-live="polite">
-          <p class="term-title" id="tTitle">סקירת מתחרים שבועית</p>
-          <p class="term-when"><span id="tWhen">כל יום שני · <bdi>08:00</bdi></span></p>
-          <ol class="term-lines" id="tLines"><li class="in"><span class="g">✓</span><span>קורא את האתרים של ארבעת המתחרים</span></li><li class="in"><span class="g">✓</span><span>מסמן שינויים במחירים ובמבצעים</span></li><li class="in ask"><span class="g">←</span><span>מחכה לאישור שלכם לפני שליחה</span></li></ol>
-        </div>
-        <div class="term-foot">
-          <span id="tStatus">מריץ…</span>
-          <span class="bar" aria-hidden="true"><i id="tBar"></i></span>
-        </div>
-      </div>
+      </figure>
     </div>
-
     <div class="facts rv" aria-label="פרטי הסדנה">
       <div class="fact"><small>מתי</small><b>יום חמישי, <bdi>17.12.2026</bdi></b></div>
       <div class="fact"><small>שעות</small><b><bdi>10:00–13:00</bdi></b></div>
@@ -506,6 +564,35 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
       <div class="lvl rv"><span class="num"><bdi>1</bdi></span><small>רמה ראשונה</small><h3>תשובה</h3><p>שואלים שאלה ומקבלים טקסט, נחמד אבל נשכח אחרי דקה.</p></div>
       <div class="lvl rv d1"><span class="num"><bdi>2</bdi></span><small>רמה שנייה</small><h3>תוצר</h3><p>מקבלים מסמך, פוסט או סיכום, שימושי אבל צריך להמציא את הדרך בכל פעם.</p></div>
       <div class="lvl rv d2"><span class="flag">לכאן מגיעים</span><span class="num"><bdi>3</bdi></span><small>רמה שלישית</small><h3>תהליך שעובד לבד</h3><p>סוכן, משימה מתוזמנת או כלי שמבצעים עבודה קבועה, עם בדיקות, ועוצרים לאישור שלכם בנקודות החשובות.</p></div>
+    </div>
+    <div class="lvl-demo">
+      <div class="rv">
+        <span class="eyebrow">כך נראית רמה 3</span>
+        <h3 class="lvl-demo-h">משימה שרצה לבד, ועוצרת לאישור שלכם</h3>
+        <p class="lead">לחצו על הדוגמאות וראו מה הסוכן עושה בכל שלב. בסדנה תבנו משימה כזו מהעסק שלכם.</p>
+        <p class="cta-line"><a class="btn btn-ink" href="#register">אני רוצה לבנות כזו <span class="arr" aria-hidden="true">←</span></a></p>
+      </div>
+      <div class="rv d1">
+        <div class="term" role="region" aria-label="הדגמה: כך נראית משימה שה-AI מבצע עבורכם">
+        <div class="term-top">
+          <span class="ltr">claude · scheduled task</span>
+        </div>
+        <div class="term-tabs" role="tablist" aria-label="דוגמאות למשימות">
+          <button role="tab" aria-selected="true" data-i="0">סקירת מתחרים</button>
+          <button role="tab" aria-selected="false" data-i="1">ליד חדש</button>
+          <button role="tab" aria-selected="false" data-i="2">דוח מכירות</button>
+        </div>
+        <div class="term-body" aria-live="polite">
+          <p class="term-title" id="tTitle">סקירת מתחרים שבועית</p>
+          <p class="term-when"><span id="tWhen">כל יום שני · <bdi>08:00</bdi></span></p>
+          <ol class="term-lines" id="tLines"><li class="in"><span class="g">✓</span><span>קורא את האתרים של ארבעת המתחרים</span></li><li class="in"><span class="g">✓</span><span>מסמן שינויים במחירים ובמבצעים</span></li><li class="in ask"><span class="g">←</span><span>מחכה לאישור שלכם לפני שליחה</span></li></ol>
+        </div>
+        <div class="term-foot">
+          <span id="tStatus">מריץ…</span>
+          <span class="bar" aria-hidden="true"><i id="tBar"></i></span>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -566,6 +653,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
         </div>
       </div>
     </div>
+    <div class="mid-cta rv"><p>בסדנה רואים איך בונים את העבודות האלה, צעד אחר צעד, בשידור חי</p><a class="btn btn-ink" href="#register">אני רוצה ללמוד את זה <span class="arr" aria-hidden="true">←</span></a></div>
   </div>
 </section>
 
@@ -653,6 +741,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
       <span class="big"><bdi id="oHours">184</bdi></span>
       <span class="unit">שעות עבודה</span>
       <p>שהן בערך <b><bdi id="oDays">20</bdi> ימי עבודה מלאים</b> על משימות שחוזרות על עצמן, ובסדנה בוחרים אחת מהן, ומתחילים להעביר אותה ל&#8209;<bdi>AI</bdi>.</p>
+      <a class="btn btn-gold" href="#register">אני רוצה להחזיר לעצמי את הזמן <span class="arr" aria-hidden="true">←</span></a>
     </div>
   </div>
 </section>
@@ -675,6 +764,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
         <li>מפתח מודל <bdi>8AI</bdi></li>
         <li>מנטור ללינקדאין ו&#8209;<bdi>B2B</bdi></li>
       </ul>
+      <p class="cta-line"><a class="btn btn-ink" href="#register">לשריין מקום בסדנה של קובי <span class="arr" aria-hidden="true">←</span></a></p>
     </div>
   </div>
 </section>
@@ -708,7 +798,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
     <div class="sticky rv">
       <span class="eyebrow">שאלות נפוצות</span>
       <h2 class="h2" id="faq-h">לפני שנרשמים</h2>
-      <p class="lead">שאלה שלא מופיעה כאן? <a href="tel:+972524443503"><bdi>052-444-3503</bdi></a> או <a href="mailto:koby@kobycoach.co.il">במייל</a>.</p>
+      <p class="lead">שאלה שלא מופיעה כאן? <a href="#contact">כתבו לי בטופס</a> ואחזור אליכם.</p>
     </div>
     <div class="faq rv">
       <details><summary>צריך לדעת לתכנת?<i aria-hidden="true"></i></summary><p>לא. הסדנה מיועדת לבעלי עסקים ומנהלים, לא למפתחים. מתחילים מהגדרת המשימה בשפה פשוטה, ורואים איך <bdi>Claude Code</bdi> הופך תיאור לתוכנית עבודה ולאבטיפוס שאפשר לבדוק.</p></details>
@@ -716,7 +806,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
       <details><summary>מה כלול במחיר?<i aria-hidden="true"></i></summary><p><bdi>450 ₪</bdi> כולל מע״מ: השתתפות בסדנת הזום החיה בת שלוש השעות, והקלטה מלאה שאפשר לחזור אליה אחרי המפגש.</p></details>
       <details><summary>לא אוכל להגיע בזמן. מה עושים?<i aria-hidden="true"></i></summary><p>ההקלטה המלאה כלולה במחיר, כך שאפשר לצפות בה אחר כך. מומלץ להגיע לשידור החי כדי לשאול שאלות בזמן אמת.</p></details>
       <details><summary>מה כדאי להכין?<i aria-hidden="true"></i></summary><p>מחשב עם חיבור לאינטרנט, חשבון באחד מכלי ה&#8209;<bdi>AI</bdi>, ומשימה עסקית אחת שאתם עושים שוב ושוב. עליה נעבוד.</p></details>
-      <details><summary>אפשר לשאול שאלות אחרי הסדנה?<i aria-hidden="true"></i></summary><p>כן. אפשר לפנות אליי ישירות בטלפון <a href="tel:+972524443503"><bdi>052-444-3503</bdi></a> או במייל <a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a>.</p></details>
+      <details><summary>אפשר לשאול שאלות אחרי הסדנה?<i aria-hidden="true"></i></summary><p>כן. אפשר לכתוב לי דרך <a href="#contact">טופס יצירת הקשר</a> או במייל <a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a>.</p></details>
       <details><summary>במה הסדנה שונה מקורסי AI אחרים?<i aria-hidden="true"></i></summary><p>רוב הקורסים מלמדים מה לכתוב, כאן לומדים איך לחשוב. מודל <bdi>8AI</bdi> ושיטת <bdi>MAPS</bdi> לוקחים אתכם מהגדרת הצורך ועד תהליך שחוזר על עצמו ועובד, וממנו לסוכן או למשימה מתוזמנת.</p></details>
       <details><summary>עם אילו כלים נעבוד?<i aria-hidden="true"></i></summary><p>ההדגמות יהיו ב&#8209;<bdi>ChatGPT</bdi> וב&#8209;<bdi>Claude Code</bdi>. העקרונות מתאימים גם לכלים אחרים, כמו <bdi>Gemini</bdi>.</p></details>
       <details><summary>מה ההבדל בין <bdi>ChatGPT</bdi> ל&#8209;<bdi>Claude Code</bdi>?<i aria-hidden="true"></i></summary><p><bdi>ChatGPT</bdi> הוא כלי שיחה לעבודה יומיומית עם טקסט, קבצים ומקורות. <bdi>Claude Code</bdi> עובד עם תיקייה במחשב ובונה קבצים אמיתיים, כמו דפים, כלים ודוחות, לפי תיאור בעברית. בסדנה תבינו מתי להשתמש בכל אחד.</p></details>
@@ -726,6 +816,38 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
       <details><summary>איך מקבלים את הקישור לזום?<i aria-hidden="true"></i></summary><p>קישור הכניסה יישלח אליכם אחרי ההרשמה והתשלום.</p></details>
       <details><summary>אפשר סדנה סגורה לארגון?<i aria-hidden="true"></i></summary><p>כן. אני מעביר סדנאות פרטיות לחברות וארגונים, מותאמות לצוות ולתהליכים שלו. צרו קשר לפרטים.</p></details>
     </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sec-warm" id="contact" aria-labelledby="contact-h">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">צור קשר</span>
+      <h2 class="h2" id="contact-h">יש שאלה לפני שנרשמים? כתבו לי</h2>
+      <p class="lead">על הסדנה, על התאמה לעסק שלכם או על סדנה סגורה לארגון. אני קורא כל פנייה וחוזר אליכם בהקדם.</p>
+      <p class="contact-mail">אפשר גם במייל: <a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a></p>
+    </div>
+    <!--FORM-START-->
+    <form class="cform rv d1" id="cform" novalidate>
+      <div class="frow">
+        <div class="field"><label for="cName">שם מלא</label><input id="cName" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="cEmail">מייל</label><input id="cEmail" name="email" type="email" autocomplete="email" dir="ltr" required></div>
+      </div>
+      <div class="field"><label for="cPhone">טלפון <span class="opt">(לא חובה)</span></label><input id="cPhone" name="phone" type="tel" autocomplete="tel" dir="ltr"></div>
+      <div class="field"><label for="cTopic">נושא הפנייה</label>
+        <select id="cTopic" name="topic">
+          <option>שאלה על הסדנה</option>
+          <option>האם הסדנה מתאימה לי</option>
+          <option>סדנה סגורה לארגון</option>
+          <option>אחר</option>
+        </select></div>
+      <div class="field"><label for="cMsg">ההודעה שלכם</label><textarea id="cMsg" name="message" rows="4" required></textarea></div>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-ink" type="submit" id="cSend">שליחת ההודעה <span class="arr" aria-hidden="true">←</span></button>
+      <p class="cstatus" id="cStatus" role="status" aria-live="polite"></p>
+    </form>
+    <!--FORM-END-->
   </div>
 </section>
 
@@ -755,7 +877,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
           <li><span>שאלות בזמן אמת על המשימה שלכם</span></li>
         </ul>
         <a class="btn btn-gold" href="https://secure.cardcom.solutions/EA/EA5/KqCFPCM6CkO3hgHgZ7S7mg/PaymentSP">להרשמה ותשלום <span class="arr" aria-hidden="true">←</span></a>
-        <small class="t-note">תשלום מאובטח בעמוד של <bdi>Cardcom</bdi></small>
+        <small class="t-note">תשלום מאובטח בעמוד של <bdi>Cardcom</bdi> · קישור הזום נשלח אחרי ההרשמה</small>
       </div>
     </div>
   </div>
@@ -765,7 +887,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 <footer class="ftr">
   <div class="wrap">
     <span>© <bdi id="yr">2026</bdi> קובי חיון · אימון עסקי והדרכות <bdi>AI</bdi></span>
-    <nav aria-label="יצירת קשר"><a href="tel:+972524443503"><bdi>052-444-3503</bdi></a><a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a></nav>
+    <nav aria-label="יצירת קשר"><a href="#contact">צור קשר</a><a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a></nav>
   </div>
 </footer>
 
@@ -916,6 +1038,36 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   }
   rT.addEventListener('input',calc); rM.addEventListener('input',calc);
   shown=0; calc();
+
+  /* hero video */
+  var vid=$('#heroVid'),vwrap=$('#vid'),vplay=$('#vidPlay'),vend=$('#vidEnd');
+  if(vid){
+    vplay.addEventListener('click',function(){vwrap.classList.add('playing');vid.controls=true;var p=vid.play();if(p&&p.catch)p.catch(function(){})});
+    vid.addEventListener('ended',function(){vid.controls=false;vend.hidden=false});
+    $('#vidAgain').addEventListener('click',function(){vend.hidden=true;vid.currentTime=0;vid.controls=true;vid.play()});
+  }
+
+  /* contact form: נשלח למייל של קובי דרך FormSubmit */
+  var cf=$('#cform');
+  if(cf){
+    var cs=$('#cStatus'),cb=$('#cSend');
+    cf.addEventListener('submit',function(e){
+      e.preventDefault();
+      var bad=false;
+      [['cName',function(v){return v.trim().length>1}],['cEmail',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())}],['cMsg',function(v){return v.trim().length>2}]].forEach(function(x){
+        var el=document.getElementById(x[0]),ok=x[1](el.value);el.parentNode.classList.toggle('err',!ok);el.setAttribute('aria-invalid',ok?'false':'true');if(!ok)bad=true;});
+      if(bad){cs.className='cstatus bad';cs.textContent='נא למלא שם, מייל תקין והודעה.';return}
+      var F=cf.elements;
+      if(F['_honey'].value){return}
+      var data={name:F['name'].value,email:F['email'].value,phone:F['phone'].value,topic:F['topic'].value,message:F['message'].value,_subject:'פנייה חדשה מדף הנחיתה: '+F['topic'].value,_template:'table',_captcha:'false'};
+      cb.disabled=true;cs.className='cstatus';cs.textContent='שולח…';
+      fetch('https://formsubmit.co/ajax/koby@kobycoach.co.il',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+        .then(function(r){return r.json().then(function(j){if(!r.ok||j.success===false||j.success==='false')throw new Error(j.message||'err');return j})})
+        .then(function(){cf.reset();cs.className='cstatus ok';cs.textContent='ההודעה נשלחה, תודה! אחזור אליכם בהקדם.'})
+        .catch(function(){cs.className='cstatus bad';cs.innerHTML='השליחה לא הצליחה. אפשר לכתוב ישירות ל-<a href="mailto:koby@kobycoach.co.il">koby@kobycoach.co.il</a>'})
+        .then(function(){cb.disabled=false});
+    });
+  }
 
   $('#yr').textContent=new Date().getFullYear();
 })();
