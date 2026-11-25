@@ -323,6 +323,18 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 .final .cd span+span{padding-inline-start:28px;border-inline-start:1px solid var(--line-dark)}
 
 .calrow{margin-top:26px}
+/* faq centered head */
+.faq-wrap{max-width:860px}
+.faq-head{text-align:center;margin-bottom:44px}
+.faq-head .eyebrow{justify-content:center}
+.faq-head .eyebrow::after{content:"";width:28px;height:1px;background:currentColor}
+/* footer registration strip */
+.ftr .ftr-reg .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-block:30px}
+.ftr-reg{border-bottom:1px solid var(--line-faint)}
+.fr-info{display:grid;gap:4px;min-width:0}
+.fr-info b{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.4rem);color:var(--white);line-height:1.3}
+.fr-info span{color:var(--soft);font-size:.95rem}
+@media (max-width:620px){.ftr-reg .btn{width:100%}}
 /* hero video */
 .vid{position:relative;margin:0}
 .vid::after{content:"";position:absolute;inset-block:14px -14px;inset-inline:14px -14px;border:1px solid var(--line-dark);border-radius:6px;z-index:-1}
@@ -802,10 +814,11 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 
 <!-- FAQ -->
 <section class="sec" id="faq" aria-labelledby="faq-h">
-  <div class="wrap split">
-    <div class="sticky rv">
+  <div class="wrap faq-wrap">
+    <div class="faq-head rv">
       <span class="eyebrow">שאלות נפוצות</span>
-      <h2 class="h2" id="faq-h">לפני שנרשמים</h2>    </div>
+      <h2 class="h2" id="faq-h">לפני שנרשמים</h2>
+    </div>
     <div class="faq rv">
       <details><summary>צריך לדעת לתכנת?<i aria-hidden="true"></i></summary><p>לא. הסדנה מיועדת לבעלי עסקים ומנהלים, לא למפתחים. מתחילים מהגדרת המשימה בשפה פשוטה, ורואים איך <bdi>Claude Code</bdi> הופך תיאור לתוכנית עבודה ולאבטיפוס שאפשר לבדוק.</p></details>
       <details><summary>האם צריך מנוי בתשלום לכלים?<i aria-hidden="true"></i></summary><p>אפשר להגיע ולצפות בהדגמות גם בלי מנוי בתשלום. שימו לב: השימוש ב&#8209;<bdi>Claude Code</bdi> דורש מנוי בתשלום לחברת <bdi>Anthropic</bdi>, ולכן תרגול עצמאי שלו אחרי הסדנה מחייב מנוי כזה.</p></details>
@@ -891,6 +904,15 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 </main>
 
 <footer class="ftr">
+  <div class="ftr-reg">
+    <div class="wrap">
+      <div class="fr-info">
+        <b>הסדנה הבאה: סדנת פריצת הדרך לעולם הבינה המלאכותית</b>
+        <span>יום חמישי, <bdi>17.12.2026</bdi> · <bdi>10:00–13:00</bdi> · בזום, בשידור חי · <bdi>450 ₪</bdi> כולל מע״מ והקלטה מלאה</span>
+      </div>
+      <a class="btn btn-gold" href="https://secure.cardcom.solutions/EA/EA5/KqCFPCM6CkO3hgHgZ7S7mg/PaymentSP">להרשמה ותשלום <span class="arr" aria-hidden="true">←</span></a>
+    </div>
+  </div>
   <div class="wrap">
     <span>© <bdi id="yr">2026</bdi> קובי חיון · אימון עסקי והדרכות <bdi>AI</bdi></span>
     <nav aria-label="יצירת קשר"><a href="#contact">צור קשר</a><a href="mailto:koby@kobycoach.co.il"><bdi>koby@kobycoach.co.il</bdi></a></nav>
