@@ -74,6 +74,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* header */
 .hdr{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);color:var(--white);transition:background-color .3s,color .3s,box-shadow .3s}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.topbar{background:var(--gold);color:var(--navy-deep);font-size:.92rem}
+.hdr .topbar .wrap{height:38px;justify-content:center;gap:18px}
+.topbar a{font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.topbar a:hover{text-decoration-thickness:2px}
 .hdr.solid{background:rgba(255,255,255,.96);color:var(--ink);box-shadow:0 1px 0 var(--line);backdrop-filter:saturate(1.4) blur(8px)}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .brand b{font-family:var(--serif);font-weight:900;font-size:1.35rem;letter-spacing:-.01em}
@@ -86,7 +90,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hdr.solid .btn-sm{background:var(--navy);color:var(--white);border-color:var(--navy)}
 
 /* hero */
-.hero{position:relative;background:var(--navy-deep);color:var(--white);padding:clamp(130px,15vw,176px) 0 0;overflow:hidden;isolation:isolate}
+.hero{position:relative;background:var(--navy-deep);color:var(--white);padding:clamp(168px,18vw,214px) 0 0;overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
   background-image:linear-gradient(var(--line-faint) 1px,transparent 1px),linear-gradient(90deg,var(--line-faint) 1px,transparent 1px);
   background-size:88px 88px;mask-image:linear-gradient(180deg,#000 0%,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
@@ -425,6 +429,9 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   :root{--wrap:calc(100% - 36px)}
   body{font-size:1rem}
   .hdr .wrap{height:64px}
+  .hdr .topbar .wrap{height:36px;gap:12px}
+  .topbar{font-size:.84rem}
+  .tb-x{display:none}
   .brand small{display:none}
   .h1{font-size:clamp(2.45rem,11vw,3.3rem)}
   .hero-cta .btn{width:100%}
@@ -468,6 +475,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 <a class="skip" href="#main">דילוג לתוכן</a>
 
 <header class="hdr" id="hdr">
+  <div class="topbar"><div class="wrap"><span><b>הסדנה הבאה:</b> יום חמישי, <bdi>17.12.2026</bdi><span class="tb-x"> · <bdi>10:00–13:00</bdi> · בזום</span></span><a href="https://secure.cardcom.solutions/EA/EA5/KqCFPCM6CkO3hgHgZ7S7mg/PaymentSP">להרשמה <span aria-hidden="true">←</span></a></div></div>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="קובי חיון, לראש העמוד"><b>קובי חיון</b><small>סדנת פריצת הדרך</small></a>
     <nav class="nav" aria-label="ניווט בעמוד">
@@ -797,12 +805,10 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   <div class="wrap split">
     <div class="sticky rv">
       <span class="eyebrow">שאלות נפוצות</span>
-      <h2 class="h2" id="faq-h">לפני שנרשמים</h2>
-      <p class="lead">שאלה שלא מופיעה כאן? <a href="#contact">כתבו לי בטופס</a> ואחזור אליכם.</p>
-    </div>
+      <h2 class="h2" id="faq-h">לפני שנרשמים</h2>    </div>
     <div class="faq rv">
       <details><summary>צריך לדעת לתכנת?<i aria-hidden="true"></i></summary><p>לא. הסדנה מיועדת לבעלי עסקים ומנהלים, לא למפתחים. מתחילים מהגדרת המשימה בשפה פשוטה, ורואים איך <bdi>Claude Code</bdi> הופך תיאור לתוכנית עבודה ולאבטיפוס שאפשר לבדוק.</p></details>
-      <details><summary>האם צריך מנוי בתשלום לכלים?<i aria-hidden="true"></i></summary><p>אפשר להגיע ולצפות בהדגמות גם בלי מנוי בתשלום. תרגול עצמאי של חלק מהיכולות, ובפרט עבודה עם <bdi>Claude Code</bdi>, תלוי בגישה לכלי ובמסלול שלכם.</p></details>
+      <details><summary>האם צריך מנוי בתשלום לכלים?<i aria-hidden="true"></i></summary><p>אפשר להגיע ולצפות בהדגמות גם בלי מנוי בתשלום. שימו לב: השימוש ב&#8209;<bdi>Claude Code</bdi> דורש מנוי בתשלום לחברת <bdi>Anthropic</bdi>, ולכן תרגול עצמאי שלו אחרי הסדנה מחייב מנוי כזה.</p></details>
       <details><summary>מה כלול במחיר?<i aria-hidden="true"></i></summary><p><bdi>450 ₪</bdi> כולל מע״מ: השתתפות בסדנת הזום החיה בת שלוש השעות, והקלטה מלאה שאפשר לחזור אליה אחרי המפגש.</p></details>
       <details><summary>לא אוכל להגיע בזמן. מה עושים?<i aria-hidden="true"></i></summary><p>ההקלטה המלאה כלולה במחיר, כך שאפשר לצפות בה אחר כך. מומלץ להגיע לשידור החי כדי לשאול שאלות בזמן אמת.</p></details>
       <details><summary>מה כדאי להכין?<i aria-hidden="true"></i></summary><p>מחשב עם חיבור לאינטרנט, חשבון באחד מכלי ה&#8209;<bdi>AI</bdi>, ומשימה עסקית אחת שאתם עושים שוב ושוב. עליה נעבוד.</p></details>
